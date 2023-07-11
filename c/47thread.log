@@ -1,0 +1,19 @@
+Name:	a
+Pid:	8731
+PPid:	3821
+TracerPid:	0
+VmPeak:	  391724 kB
+VmSize:	  391724 kB
+VmLck:	       0 kB
+VmPin:	       0 kB
+VmHWM:	     912 kB
+VmRSS:	     912 kB
+RssAnon:	     492 kB
+RssFile:	     420 kB
+RssShmem:	       0 kB
+VmData:	  385408 kB
+VmStk:	     132 kB
+VmExe:	       8 kB
+VmLib:	    2028 kB
+VmPTE:	     216 kB
+VmSwap:	       0 kB

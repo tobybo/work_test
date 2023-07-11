@@ -1,0 +1,37 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+
+//enum TROOP_STATE{ WAIT = 1, MOVE};
+
+int main(int argn, char** argv)
+{
+    /* float a = 10.25; */
+    /* int b = a > (int)a? a + 1:a; */
+    /* printf("b: %d\n",b); */
+    /*  */
+    /* if(-1) */
+    /*     printf("-1 is true\n"); */
+    /*  */
+    /* printf(" long size: %d\n", sizeof(long)); */
+    /*  */
+    /* int x = 100000; */
+    /* int y = 100001; */
+    /* long ret1 = x << 16; */
+    /* long ret = ((long)x << 16) & (long)y; */
+    /* long retx = ret >> 16; */
+    /* long rety = ret & 0xFFFF; */
+    /* printf("ret1: %ld, ret: %ld, retx: %ld, rety: %ld\n", ret1, ret, retx, rety); */
+    /*  */
+    /* printf("state: %d, ifmove: %d\n", WAIT, MOVE == 2);  */
+    /*  */
+    /* char aaa[4] = {0,}; */
+    /* memset(aaa, 0, 4); */
+    /* aaa[3] = 9;  */
+    /* int a_int = aaa[3] << 24;  */
+    /* int b_int = (int)aaa[3] << 24;  */
+    /* printf("  aaa4 << 24: %d, b_int: %d\n", a_int, b_int); */
+    char a = 1;
+    int b = a << 24;
+    return 0;
+}

@@ -1,0 +1,19 @@
+
+a ?= init
+
+b = $a
+
+.PHONY : haha hi
+#a = new
+haha :
+	@echo $b
+
+hi : a = 10
+
+hi :
+	@echo 100
+
+
+
+
+
