@@ -3,7 +3,7 @@
 #include <random>
 #include <cmath>
 
-#include "14_2.h"
+#include "16_21.h"
 using namespace std;
 
 int main(int argNum, char **argv) {
@@ -106,14 +106,18 @@ int main(int argNum, char **argv) {
     // fun();
     // printf("a,%d\n", a);
 
-    Solution sol;
-    int ret;
-    for (int i = 2; i <= 10; ++i) {
-        ret = sol.cuttingRope(i);
-        printf("i,%d, ret, %d\n", i, ret);
-    }
-    printf("i,1000, ret, %d\n", sol.cuttingRope(1000));
+    // 14_2
+    // Solution sol;
+    // int ret;
+    // for (int i = 2; i <= 10; ++i) {
+    //     ret = sol.cuttingRope(i);
+    //     printf("i,%d, ret, %d\n", i, ret);
+    // }
+    // printf("i,1000, ret, %d\n", sol.cuttingRope(1000));
 
+    // 16_21
+    CSolution sol;
+    sol.entrance();
     return 0;
 }
 
