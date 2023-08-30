@@ -3,6 +3,7 @@
 
 #include <pcap.h>
 #include <iostream>
+#include <string>
 
 void packet_handler(u_char* param, const struct pcap_pkthdr* header, const u_char* pkt_data);
 
@@ -10,8 +11,10 @@ int main(int argc, char** argv)
 {
     char errbuf[PCAP_ERRBUF_SIZE];
     pcap_t* handle;
+    const u_char* packet;		/* The actual packet */
+    struct pcap_pkthdr header;	/* The header that pcap gives us */
     struct bpf_program fp;
-    char filter_exp[] = "port 80";
+    char filter_exp[] = "";
     bpf_u_int32 net, mask;
 
     // Find all available network interfaces
@@ -22,6 +25,16 @@ int main(int argc, char** argv)
     }
 
     // Use the first available network interface
+
+
+    // show all interface names
+    while (alldevs) {
+        std::cout << "interface name: " << alldevs->name << " dec: "<< alldevs->description << std::endl;
+        if (std::string(alldevs->description).find("Realtek") != std::string::npos) {
+            break;
+        }
+        alldevs = alldevs->next;
+    }
     char* dev = alldevs->name;
 
     // Get the network address and netmask of the interface
@@ -53,6 +66,11 @@ int main(int argc, char** argv)
     // Start capturing packets
     pcap_loop(handle, -1, packet_handler, NULL);
 
+    ///* Grab a packet */
+    //packet = pcap_next(handle, &header);
+    ///* Print its length */
+    //printf("Jacked a packet with length of [%x]\n", header.len);
+
     // Close the capture handle
     pcap_close(handle);
 
@@ -64,6 +82,8 @@ void packet_handler(u_char* param, const struct pcap_pkthdr* header, const u_cha
     // Process the packet data here
     std::cout<<"packet_handler: "<<header->len<<std::endl;
 }
+
+
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
 // 调试程序: F5 或调试 >“开始调试”菜单
